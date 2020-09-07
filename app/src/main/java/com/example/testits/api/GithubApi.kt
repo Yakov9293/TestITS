@@ -1,13 +1,11 @@
-package com.example.testits
+package com.example.testits.api
 
-import io.reactivex.Observable
+import com.example.testits.data.DetailUser
+import com.example.testits.data.User
 import io.reactivex.Single
-import kotlinx.coroutines.Deferred
-import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Path
 import retrofit2.http.Query
-import java.util.*
 
 interface GithubApi {
 

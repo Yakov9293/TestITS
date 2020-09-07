@@ -8,17 +8,17 @@
 
         <variable
             name="detailUser"
-            type="com.example.testits.DetailUser" />
+            type="com.example.testits.data.DetailUser" />
 
         <variable
             name="viewModel"
-            type="com.example.testits.DetailUserViewModel" />
+            type="com.example.testits.viewModel.DetailUserViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".DetailsFragment">
+        tools:context=".fragments.DetailsFragment">
 
 
         <ImageView

@@ -1,4 +1,4 @@
-package com.example.testits;
+package com.example.testits.util;
 
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;

@@ -7,7 +7,7 @@
 
         <variable
             name="user"
-            type="com.example.testits.User" />
+            type="com.example.testits.data.User" />
 
         <variable
             name="clickListener"

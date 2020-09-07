@@ -1,4 +1,4 @@
-package com.example.testits
+package com.example.testits.adapters
 
 import android.widget.ImageView
 import androidx.databinding.BindingAdapter

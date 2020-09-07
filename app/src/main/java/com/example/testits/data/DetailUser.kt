@@ -1,4 +1,4 @@
-package com.example.testits
+package com.example.testits.data
 
 data class DetailUser(
     val login: String,

@@ -1,9 +1,8 @@
-package com.example.testits
+package com.example.testits.data
 
+import com.example.testits.api.GithubApi
 import io.reactivex.schedulers.Schedulers
-import okhttp3.Interceptor
 import okhttp3.OkHttpClient
-import okhttp3.Request
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
@@ -26,7 +25,8 @@ object GithubService {
         .client(okHttpClient.build())
         .build()
 
-    val githubApi: GithubApi = retrofit().create(GithubApi::class.java)
+    val githubApi: GithubApi = retrofit().create(
+        GithubApi::class.java)
 
 
 

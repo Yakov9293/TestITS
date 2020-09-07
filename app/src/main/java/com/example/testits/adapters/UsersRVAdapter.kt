@@ -1,17 +1,15 @@
-package com.example.testits
+package com.example.testits.adapters
 
-import android.util.Log
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import androidx.lifecycle.LiveData
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
-import com.example.testits.databinding.FragmentListUsersBinding
+import com.example.testits.data.User
 import com.example.testits.databinding.ItemUserBinding
+import com.example.testits.fragments.ListUsersFragmentDirections
 
-class MyAdapter(listUsers: ArrayList<User>?) :
-    RecyclerView.Adapter<MyAdapter.ItemViewHolder>() {
+class UsersRVAdapter(listUsers: ArrayList<User>?) :
+    RecyclerView.Adapter<UsersRVAdapter.ItemViewHolder>() {
 
     private val itemList: ArrayList<User>? = listUsers
 
@@ -20,7 +18,9 @@ class MyAdapter(listUsers: ArrayList<User>?) :
             binding.setClickListener {
                 binding.user?.let { user ->
                     val direction =
-                        ListUsersFragmentDirections.actionListUsersFragmentToDetailsFragment(user.login)
+                        ListUsersFragmentDirections.actionListUsersFragmentToDetailsFragment(
+                            user.login
+                        )
                     it.findNavController().navigate(direction)
                 }
             }
@@ -34,7 +34,7 @@ class MyAdapter(listUsers: ArrayList<User>?) :
         }
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyAdapter.ItemViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemViewHolder {
         return ItemViewHolder(
             ItemUserBinding.inflate(
                 LayoutInflater.from(parent.context),
@@ -48,7 +48,7 @@ class MyAdapter(listUsers: ArrayList<User>?) :
         return itemList?.size ?: 0
     }
 
-    override fun onBindViewHolder(holder: MyAdapter.ItemViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
         holder.bind(itemList?.get(position))
     }
 

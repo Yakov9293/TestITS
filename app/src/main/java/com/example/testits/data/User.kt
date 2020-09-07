@@ -1,4 +1,4 @@
-package com.example.testits
+package com.example.testits.data
 
 data class User(
     val id: Int,

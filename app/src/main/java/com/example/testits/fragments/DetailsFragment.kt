@@ -1,16 +1,20 @@
-package com.example.testits
+package com.example.testits.fragments
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.navArgs
+import com.example.testits.R
 import com.example.testits.databinding.FragmentDetailsBinding
+import com.example.testits.viewModel.DetailUserViewModel
+import com.example.testits.viewModel.DetailUserViewModelFactory
+
 
 class DetailsFragment : Fragment() {
     val args: DetailsFragmentArgs by navArgs()
@@ -23,7 +27,8 @@ class DetailsFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val binding = DataBindingUtil.inflate<FragmentDetailsBinding>(
-            inflater, R.layout.fragment_details, container, false
+            inflater,
+            R.layout.fragment_details, container, false
         ).apply {
             viewModel = detailUserViewModel
             lifecycleOwner = viewLifecycleOwner

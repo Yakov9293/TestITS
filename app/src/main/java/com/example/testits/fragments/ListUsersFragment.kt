@@ -1,4 +1,4 @@
-package com.example.testits
+package com.example.testits.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -10,7 +10,10 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.testits.adapters.UsersRVAdapter
+import com.example.testits.util.EndlessRecyclerViewScrollListener
 import com.example.testits.databinding.FragmentListUsersBinding
+import com.example.testits.viewModel.ListUsersViewModel
 
 class ListUsersFragment : Fragment() {
 
@@ -26,7 +29,8 @@ class ListUsersFragment : Fragment() {
 
         binding.rvUsers.apply {
             this.layoutManager = layoutManager
-            this.adapter = MyAdapter(listUsersViewModel.listUsers)
+            this.adapter =
+                UsersRVAdapter(listUsersViewModel.listUsers)
             listUsersViewModel.addUsers { adapter?.notifyDataSetChanged() }
 
             addOnScrollListener(object : EndlessRecyclerViewScrollListener(layoutManager) {

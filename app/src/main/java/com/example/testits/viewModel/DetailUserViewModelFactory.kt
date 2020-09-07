@@ -1,6 +1,5 @@
-package com.example.testits
+package com.example.testits.viewModel
 
-import android.content.Context
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 
