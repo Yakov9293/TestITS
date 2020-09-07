@@ -18,7 +18,7 @@ object GithubService {
     private val okHttpClient = OkHttpClient.Builder()
         .addInterceptor(interceptor)
 
-    private fun retrofit() : Retrofit = Retrofit.Builder()
+    private fun retrofit(): Retrofit = Retrofit.Builder()
         .baseUrl("https://api.github.com/")
         .addConverterFactory(MoshiConverterFactory.create())
         .addCallAdapterFactory(rxAdapter)
@@ -26,8 +26,8 @@ object GithubService {
         .build()
 
     val githubApi: GithubApi = retrofit().create(
-        GithubApi::class.java)
-
+        GithubApi::class.java
+    )
 
 
 }

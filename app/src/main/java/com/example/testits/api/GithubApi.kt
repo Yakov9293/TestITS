@@ -13,6 +13,6 @@ interface GithubApi {
     fun getUsers(@Query("since") since: Int): Single<List<User>>
 
     @GET("users/{nickname}")
-    fun getUserDetail(@Path("nickname") nickname: String): Single<DetailUser>
+    fun getUserDetail(@Path("nickname") login: String): Single<DetailUser>
 
 }

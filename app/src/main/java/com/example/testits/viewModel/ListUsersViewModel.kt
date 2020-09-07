@@ -12,11 +12,11 @@ import io.reactivex.schedulers.Schedulers
 
 class ListUsersViewModel : ViewModel() {
 
-    val listUsers = ArrayList<User>()
-    var idLastUser = 0
-
     private val _errorMessage = MutableLiveData<String>()
     val errorMessage: LiveData<String> = _errorMessage
+
+    val listUsers = ArrayList<User>()
+    var idLastUser = 0
 
     fun addUsers(callback: () -> Unit) {
         GithubService.githubApi.getUsers(idLastUser).subscribeOn(Schedulers.io()).observeOn(

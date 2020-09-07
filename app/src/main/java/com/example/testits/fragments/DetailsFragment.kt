@@ -17,6 +17,7 @@ import com.example.testits.viewModel.DetailUserViewModelFactory
 
 
 class DetailsFragment : Fragment() {
+    
     val args: DetailsFragmentArgs by navArgs()
     private val detailUserViewModel: DetailUserViewModel by viewModels {
         DetailUserViewModelFactory(args.userLogin)

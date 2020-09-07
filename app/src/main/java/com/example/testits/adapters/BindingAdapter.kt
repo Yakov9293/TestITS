@@ -12,8 +12,5 @@ fun bindPosterFromUrl(view: ImageView, imageUrl: String?) {
             .load(imageUrl)
             .transition(DrawableTransitionOptions.withCrossFade())
             .into(view)
-    } else {
-        //TODO: нужно ли здесь обрабатывать else
-        //view.setImageResource(R.drawable.empty_poster)
     }
 }
