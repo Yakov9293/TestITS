@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="detailUser"
+            type="com.example.testits.DetailUser" />
+
+        <variable
+            name="viewModel"
+            type="com.example.testits.DetailUserViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".DetailsFragment">
+
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintWidth_percent="0.8"
+            android:background="#FFFFFF"
+            app:layout_constraintBottom_toBottomOf="@id/empty2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/empty" />
+
+
+
+        <TextView
+            android:id="@+id/empty"
+            android:layout_width="0dp"
+            android:layout_marginBottom="6dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="@id/avatar"
+            app:layout_constraintHorizontal_bias="1"
+            app:layout_constraintStart_toStartOf="@id/avatar"
+            app:layout_constraintBottom_toTopOf="@id/avatar" />
+
+        <ImageView
+            android:id="@+id/avatar"
+            avatarFromUrl="@{viewModel.detailMovie.avatar_url}"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.25"
+            app:layout_constraintWidth_percent="0.6"
+            />
+
+        <TextView
+            android:id="@+id/login"
+            android:layout_width="0dp"
+            android:textAlignment="textEnd"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="26dp"
+            android:text="@{viewModel.detailMovie.login}"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@id/avatar"
+            app:layout_constraintHorizontal_bias="1"
+            app:layout_constraintStart_toStartOf="@id/avatar"
+            app:layout_constraintTop_toBottomOf="@id/avatar"
+            tools:text="asdfasdfasdfasdf" />
+
+        <TextView
+            android:id="@+id/location"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textAlignment="textEnd"
+            android:layout_marginTop="20dp"
+            android:text="@{ ((viewModel.detailMovie != null) &amp;&amp; (viewModel.detailMovie.location == null)) ? String.format(@string/somewhere) : viewModel.detailMovie.location }"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="@id/avatar"
+            app:layout_constraintHorizontal_bias="1"
+            app:layout_constraintStart_toStartOf="@id/avatar"
+            app:layout_constraintTop_toBottomOf="@id/login"
+            tools:text="asdfasdfasdfasdf" />
+
+        <TextView
+            android:id="@+id/url"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textAlignment="textEnd"
+            android:layout_marginTop="20dp"
+            android:autoLink="web"
+            android:text="@{viewModel.detailMovie.html_url}"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="@id/avatar"
+            app:layout_constraintHorizontal_bias="1"
+            app:layout_constraintStart_toStartOf="@id/avatar"
+            app:layout_constraintTop_toBottomOf="@id/location"
+            tools:text="asdfasdfasdghjfghjfghjsdfgsdfgfghjfgfghjjfghjfasdf" />
+
+        <TextView
+            android:id="@+id/empty2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            app:layout_constraintEnd_toEndOf="@id/avatar"
+            app:layout_constraintHorizontal_bias="1"
+            app:layout_constraintStart_toStartOf="@id/avatar"
+            app:layout_constraintTop_toBottomOf="@id/url" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
+
